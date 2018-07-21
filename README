@@ -1,0 +1,78 @@
+XTar V1.5b2
+------------
+XTar is a package for graphically viewing and manipulating files which have been
+archived using tar (Tape ARchive), and possibly compressed with gzip or the
+standard UNIX compress utility. XTar requires an ANSI C compiler and the Motif
+toolkit to build. See http://www.stella-consulting.ltd.uk/xtar/ for more
+information.
+
+BETA RELEASE!!  This is a beta release of XTar for testing, please report any
+bugs to xtar-bugs@stella-consulting.ltd.uk.
+
+This distribution contains the following files and directories:
+
+HISTORY		-	A line by line log of changes to XTar
+Imakefile	-	System independent file for creating Makefiles
+Makefile.noimake-	For users without imake
+README		-	This file
+VERSION		-	Contains current XTar version
+XTar.ad		-	XTar app-defaults
+XTar.tmpl	-	Template file for imake
+Xbr/		-	X windows library of use(less)ful routines
+common/		-	Miscellaneous library of routines
+docs/           -       HTML help documents
+xtar.doc	-	Man page in text format (help file)
+xtar.man	-	Man page in nroff format
+*.[ch]		-	Source files
+
+Installing with imake
+---------------------
+If you have imake installed on your system, then you should not need to make
+any changes. Just edit 'XTar.ad' and set the resource 'helpDoc' to where you
+will install the help files. By default this is in $(LIBDIR)/docs. Then type,
+
+xmkmf		 -	Create initial Makefile
+make Makefiles	 -	Create Makefiles in common/ and Xbr/
+make		 -	Builds xtar
+make install	 -	Installs binary, help files and app-defaults
+make install.man -	Installs man page
+
+Installing without imake
+------------------------
+Makefiles have been provided for those without imake. Firstly,
+you must edit 'Makefile.noimake' and set the installation parameters at the
+top of the file. Next, you must look for your systems architecture and
+uncomment the relevant lines [and comment out the lines for the other
+architectures]. It is more than likely that the incorrect default parameters
+have been set, as this Makefile is untested on some systems - so let me have
+the feedback on what they should be!
+
+Now edit XTar.ad and set the helpDoc resource to be $(LIBDIR)/docs.  Then
+type,
+
+make -f Makefile.noimake		-	Builds the system
+make -f Makefile.noimake install	-	Install binary and other files
+
+XTar announcements mailing list
+-------------------------------
+If you would like to be kept up to date with the latest changes to XTar
+then please send a message with the subject 'subscribe' and message body
+containing just the text 'subscribe', to xtar-request@stella-consulting.ltd.uk.
+This is a low volume mailing list, for announcements only.
+
+Notes
+-----
+o You configure which viewers are spawned by setting the 'mappings' resource.
+  This allows you to launch 'xv' for viewing images and 'ghostview' for
+  viewing PostScript documents for example. See the app-defaults file, XTar.ad,
+  for an example of how it works.
+
+o The XTar home page is at:
+    http://www.stella-consulting.ltd.uk/xtar/
+
+o Also check out WWWTar, a similar application for viewing tar files across
+  the web. For more information see:
+    http://www.stella-consulting.ltd.uk/wwwtar/
+
+Rik Turnbull.
+rik@stella-consulting.ltd.uk.

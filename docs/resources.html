@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>XTar - Resources</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1><font size="4" face="Arial">XTar - Resources</font></h1>
+
+<p><font size="2" face="Arial">There are only two resources which
+are specific to <b>XTar</b>:</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">The <i>helpDoc</i> resource
+        is a string which points to the pathname of the index.html
+        file of the hypertext help pages.</font></li>
+    <li><font size="2" face="Arial">The <i>mappings</i> resource
+        is a list of file name endings to viewer mappings. This
+        enables XTar to choose the correct viewer to run when the
+        user requests to view a file. </font></li>
+</ul>
+
+<p><font size="2" face="Arial">Here is a copy of the resources
+file, <em>XTar.ad</em>, as supplied with <strong>XTar</strong>.</font></p>
+
+<hr>
+
+<pre><font size="2" face="Courier">!!!! Help document !!!!
+XTar*helpDoc:	/opt/xtar-1.5b/docs/index.html
+
+!!! Some window dimensions !!!
+XTar*TarWindow.width:	770
+XTar*TarWindow.height:	600
+XTar*FileForm.width:	770
+XTar*FileForm.height:	640
+XTar*HelpForm.width:	770
+XTar*HelpForm.height:	640
+XTar*AboutForm.width:	590
+XTar*AboutForm.height:	220
+
+!!!! Fonts !!!!
+XTar*fontList:	-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1
+XTar*FileList.fontList:	-adobe-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+XTar*XmText.fontList:	-adobe-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+!!!! Titles &amp; icon name !!!!
+XTar*title:	XTar V1.5b
+XTar*iconName:	XTar V1.5b
+
+!!!! Colours definitions !!!!
+XTar*background:	Grey75
+XTar*foreground:	Black
+XTar*XmRowColumn.background:	#9F009B00BF00
+XTar*XmCascadeButton.background:#9F009B00BF00
+
+!!!! ToggleButton options !!!!
+XTar*XmToggleButton*visibleWhenOff:True
+XTar*XmToggleButton*indicatorSize:12
+XTar*XmToggleButton*fillOnSelect:True
+XTar*XmToggleButton*selectColor:Red
+XTar*Set Attributes0*set:True
+XTar*Set Attributes1*set:True
+XTar*XTar7*set:False
+
+!!!! Translations !!!!
+XTar*FileList*Translations: #override \n&lt;Key&gt;n: next()\n\
+&lt;Key&gt;/: search()
+
+!!!! Mappings !!!!
+XTar*mappings:	.gif	xv %s\n\
+.jpg	xv %s\n\
+.tif	xv %s\n\
+.tiff	xv %s\n\
+.pbm	xv %s\n\
+.ppm	xv %s\n\
+.pnm	xv %s\n\
+.pgm	xv %s\n\
+.xbm	xv %s\n\
+.bm	xv %s\n\
+.xwd	xwud -n %s\n\
+.htm	netscape %s\n\
+.html	netscape %s\n\
+.mpg	mpeg_play %s\n\
+.mpeg	mpeg_play %s\n\
+.ps	ghostview %s\n\
+.dvi	xdvi %s
+</font></pre>
+
+<hr>
+
+<p><font size="2" face="Arial"><i>Go back to the </i></font><a href="index.html"><font size="2" face="Arial"><i>index</i></font></a><font
+size="2" face="Arial"><i> or on to </i></font><a href="wwwtar.html"><font size="2" face="Arial"><i>WWWTar</i></font></a><font
+size="2" face="Arial"><i>. </i></font></p>
+</body>
+</html>

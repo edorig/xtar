@@ -1,0 +1,132 @@
+
+
+
+ xtar(1)                                                             xtar(1)
+
+
+
+
+ NAME
+      xtar 1.5b - view contents of a tar file
+
+ SYNOPSIS
+      xtar [Xoptions] [tarfile[.gz|.Z]]
+
+ DESCRIPTION
+      XTar is a Motif program for viewing and manipulating tar archives
+      (which may be compressed).  The contents of the archive are displayed
+      in the main window and various options are available from pulldown and
+      popup menus.
+
+      The main window shows the name of the file currently displayed.
+
+      The main XTar pulldown menu has the following options:
+
+      OPEN             Open a new tar file.
+
+      CLOSE            Close currently opened tar file.
+
+      VIEW...          View the contents of any selected files, using the
+                       internal file viewer or launch an external viewer.
+
+      EXTRACT...       Extract the contents of any selected files to a
+                       specified directory.
+
+      EXTRACT ALL...   Extract the contents of the entire tar archive to a
+                       specified directory.
+
+      STATISTICS...    View statistics about the currently opened tar
+                       archive.
+
+      FILENAME SEARCH...
+                       Perform a regular expression search on the FILENAMES
+                       in the tar file.  This can also be activated by
+                       pressing '/' in the main window.
+
+      NEXT             Search for the next occurence of the regular
+                       expression.  This can also be activated by pressing
+
+      CONVERT UID/GID  Convert user IDs and group IDs to usernames and group
+                       names on the current system.
+
+      QUIT             Exit XTar.
+
+      The Set Attributes pulldown menu allows you to set permissions,
+      ownership, and, if you are root, the group id and time stamp, on
+      extracted files.  To enable these options simply toggle the
+      corresponding button.
+
+
+
+
+
+                                    - 1 -           Formatted:  May 23, 1999
+
+
+
+
+
+
+ xtar(1)                                                             xtar(1)
+
+
+
+
+      The Help pulldown menu allows you to access copyright information and
+      the xtar HTML documents.
+
+ AUTHOR
+      Rik Turnbull, Stella Consulting Ltd.  <rik@stella-consulting.ltd.uk>
+      http://www.stella-consulting.ltd.uk/xtar/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    - 2 -           Formatted:  May 23, 1999
+
+
+

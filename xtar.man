@@ -1,0 +1,60 @@
+.TH xtar 1
+.SH NAME
+xtar 1.5b \- view contents of a tar file
+.SH SYNOPSIS
+.B xtar
+.RI [ Xoptions ]
+.RI [ tarfile\c
+.RI [ .gz\c
+.RI | .Z ]]
+.SH DESCRIPTION
+XTar is a Motif program for viewing and manipulating tar archives
+(which may be compressed).
+The contents of the archive are displayed in the main window
+and various options are available from pulldown and popup menus.
+.PP
+The main window shows the name of the file currently displayed.
+.PP
+The main XTar pulldown menu has the following options:
+.nr n \w'EXTRACT AS...\0\0\0\0'+1n-1/1n
+.IP "OPEN" \nn
+Open a new tar file.
+.IP "CLOSE" \nn
+Close currently opened tar file.
+.IP "VIEW..." \nn
+View the contents of any selected files, using the internal
+file viewer or launch an external viewer.
+.IP "EXTRACT..." \nn
+Extract the contents of any selected files to a specified
+directory.
+.IP "EXTRACT ALL..." \nn
+Extract the contents of the entire tar archive to a specified directory.
+.IP "STATISTICS..." \nn
+View statistics about the currently opened tar archive.
+.IP "FILENAME SEARCH..." \nn
+Perform a regular expression search on the FILENAMES
+in the tar file.
+This can also be activated by
+pressing '/' in the main window.
+.IP NEXT \nn
+Search for the next occurence of the regular
+expression.
+This can also be activated by pressing
+'n' in the main window.
+.IP "CONVERT UID/GID" \nn
+Convert user IDs and group IDs to usernames and group names on
+the current system.
+.IP QUIT \nn
+Exit XTar.
+.PP
+The Set Attributes pulldown menu allows you to set permissions, ownership,
+and, if you are root, the group id and time stamp, on extracted files.
+To enable these options simply toggle the corresponding button.
+.PP
+The Help pulldown menu allows you to access copyright information and the
+xtar HTML documents.
+.SH AUTHOR
+Rik Turnbull,
+Stella Consulting Ltd.
+<rik@stella-consulting.ltd.uk>
+http://www.stella-consulting.ltd.uk/xtar/

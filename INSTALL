@@ -1,0 +1,6 @@
+To compile and install:
+
+[Edit resources.h and/or XTar.ad for your site]
+xmkmf
+make Makefiles
+make install install.man
