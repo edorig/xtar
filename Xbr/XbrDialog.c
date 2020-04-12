@@ -26,6 +26,7 @@
 #include "XbrCursor.h"
 #include "XbrFSB.h"
 #include "XbrRes.h"
+#include "../common/fname.h" 
 
 #if (XmVERSION < 1) || ((XmVERSION == 1) && (XmREVISION < 2))
 #define XmStringCreateLocalized(string) XmStringCreateLtoR(string,XmSTRING_DEFAULT_CHARSET)

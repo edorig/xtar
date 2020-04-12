@@ -13,7 +13,8 @@
  * DESCRIPTION:	Routines which are regular needed as callback routines.
  *
  */
-
+#include <stdio.h> 
+#include <stdlib.h>
 #include <Xm/Xm.h>
 
 void XbrCBExitApplication(Widget, XtPointer, XtPointer);

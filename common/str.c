@@ -17,6 +17,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "cdefs.h"
 
@@ -279,7 +280,7 @@ char *str_word(char **string)
 char *str_error(int errnum)
 {
         extern int sys_nerr;
-        extern char *sys_errlist[];
+	/*       extern char *sys_errlist[]; */ 
         static char ebuf[40];           /* 64-bit number + slop */
 
         if ((unsigned int)errnum < sys_nerr)

@@ -24,6 +24,7 @@
 #define	MAGIC_TROFF		5
 #define	MAGIC_POSTSCRIPT	6
 #define	MAGIC_BZIP		7
+#define MAGIC_LZMA              8
 
 extern int magic_ftype(char *, int);
 
@@ -32,6 +33,7 @@ extern int magic_ftype(char *, int);
 #define	is_compressed(filename)	magic_ftype(filename, MAGIC_COMPRESS)
 #define	is_gzipped(filename)	magic_ftype(filename, MAGIC_GZIP)
 #define	is_bzipped(filename)	magic_ftype(filename, MAGIC_BZIP)
+#define is_xzipped(filename)    magic_ftype(filename, MAGIC_LZMA)
 #define	is_troff(filename)	magic_ftype(filename, MAGIC_TROFF)
 #define	is_postscript(filename)	magic_ftype(filename, MAGIC_POSTSCRIPT)
 

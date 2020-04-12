@@ -13,7 +13,7 @@
  * DESCRIPTION: Routines to allocate and free up colours.
  *
  */
-
+#include <math.h> 
 #include <Xm/Xm.h>
 
 #define	XbrColour_MAX_COLOURS	256

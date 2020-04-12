@@ -19,6 +19,8 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <utime.h>
 #include <time.h>
@@ -153,14 +155,29 @@ char *file_uncompress(char *filename)
             return(NULL);
         suffix = ".Z";
     }
-
+    else if (is_bzipped(filename)) {
+      if(!env_inpath("bunzip2"))
+	return(NULL);
+      sprintf(command,"bunzip2 -f %s",filename);
+      if (!system(command))
+	return(NULL);
+      suffix=".bz2";
+    }
+    else if (is_xzipped(filename)) {
+	if(!env_inpath("unxz")) 
+	  return(NULL);
+	sprintf(command,"unxz -f %s",filename);
+	if (!system(command))
+	return(NULL);
+      suffix=".xz";
+      }
     /* Strip of suffix if it was there */
     if(suffix != NULL) {
         if((ptr = strstr(newfile, suffix)) != NULL)
             *ptr = 0;
     }
 
-    /* Return uncomprssed filename */
+    /* Return uncompressed filename */
     return(newfile);
 }
 

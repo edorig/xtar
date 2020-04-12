@@ -278,7 +278,7 @@ void XbrCursorDelete(Widget w)
 
 void XbrCursorAddCB(Widget w, XtPointer client_data, XtPointer call_data)
 {
-    XbrCursorAdd(w, (int)client_data);
+    XbrCursorAdd(w, (long int)client_data);
 }
 
 /* XbrCursorDeleteCB:*********************************************************/

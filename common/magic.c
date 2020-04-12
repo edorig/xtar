@@ -17,6 +17,8 @@
 
 #include <fcntl.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 #include "magic.h"
 
@@ -28,7 +30,8 @@ static unsigned char compress[3]   = { 0x1f, 0x9d, 0x90 };
 static unsigned char gzip[3]       = { 0x1f, 0x8b, 0x08 };
 static unsigned char troff[2]      = { 0x5c, 0x22 };
 static unsigned char postscript[2] = { 0x25, 0x21 };
-static unsigned char bzip[2]       = "BZ";
+static unsigned char bzip[3]       = {'B','Z','h'};
+static unsigned char lzma[6]       = {0xFD, '7', 'z', 'X', 'Z', 0x00}; 
 
 /* magic_ftype:*******************************************************/
 /* magic_ftype: Using magic numbers is file of type suggested?       */
@@ -87,8 +90,13 @@ int magic_ftype(char *filename, int type)
                 return(1);
             break;
         case MAGIC_BZIP:
-            if(!memcmp(buffer, bzip, 2))
+            if(!memcmp(buffer, bzip, 3))
                 return(1);
+            break;
+        case MAGIC_LZMA:
+            if (!memcmp(buffer,lzma,3))
+	      fprintf(stderr,"LZMA compressed file. Buggy.\n"); 
+	         return(1);
             break;
         default:
             return(0);

@@ -589,6 +589,8 @@ static int xtar_read()
         stats.compressed = _COMPRESSED_Z;
     } else if(is_bzipped(tarfile)) {
         stats.compressed = _COMPRESSED_BZ;
+    } else if(is_xzipped(tarfile)) {
+      stats.compressed = _COMPRESSED_XZ;
     } else {
         stats.compressed = _COMPRESSED_NONE;
     }

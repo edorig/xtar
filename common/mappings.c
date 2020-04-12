@@ -144,7 +144,8 @@ char *mappings_execute(char *filename, char *tmpname, int doit)
            system(command);
        }
        return(mappings_execute(fname, tmpnew, doit));
-    } else if(is_compressed(tmpname) && ((ptr = str_ending(fname, ".Z")) != NULL)) {
+    }
+    else if(is_compressed(tmpname) && ((ptr = str_ending(fname, ".Z")) != NULL)) {
        *ptr = 0;
        if(doit) {
            tmpnew = tmpfile_create();
@@ -152,7 +153,8 @@ char *mappings_execute(char *filename, char *tmpname, int doit)
            system(command);
        }
        return(mappings_execute(fname, tmpnew, doit));
-    } else if(is_bzipped(tmpname) && ((ptr = str_ending(fname, ".bz2")) != NULL)) {
+    }
+    else if(is_bzipped(tmpname) && ((ptr = str_ending(fname, ".bz2")) != NULL)) {
        *ptr = 0;
        if(doit) {
            tmpnew = tmpfile_create();
@@ -161,6 +163,16 @@ char *mappings_execute(char *filename, char *tmpname, int doit)
        }
        return(mappings_execute(fname, tmpnew, doit));
     }
+    else if(is_xzipped(tmpname) && ((ptr = str_ending(fname, ".xz")) != NULL)) {
+       *ptr = 0;
+       if(doit) {
+           tmpnew = tmpfile_create();
+           sprintf(command, "xz -dc < %s > %s", tmpname, tmpnew);
+           system(command);
+       }
+       return(mappings_execute(fname, tmpnew, doit));
+    }
+  
     
     return(NULL);
 }
@@ -174,7 +186,7 @@ char *mappings_execute(char *filename, char *tmpname, int doit)
   Allocate memory for a new MAPPING structure and intialize data structures
   with copies of "ending" and "command".
   ----------------------------------------------------------------------------*/
-static MAPPING *mappings_alloc(char *ending, char *command)
+MAPPING *mappings_alloc(char *ending, char *command)
 {
     MAPPING *mapping;
 
@@ -194,7 +206,7 @@ static MAPPING *mappings_alloc(char *ending, char *command)
   mappings_find()
   Find the command that is mapped to this file ending.
   ----------------------------------------------------------------------------*/
-static char *mappings_find(char *filename)
+char *mappings_find(char *filename)
 {
     int i;
     MAPPING *mapping;

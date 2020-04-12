@@ -21,6 +21,7 @@
 #define	_COMPRESSED_Z		1
 #define	_COMPRESSED_GZ		2
 #define	_COMPRESSED_BZ		3
+#define _COMPRESSED_XZ          4
 
 typedef struct _tar_stats
 {

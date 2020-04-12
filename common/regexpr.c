@@ -23,7 +23,7 @@
  * regular-expression syntax might require a total rethink.
  */
 #include <stdio.h>
-
+#include <string.h>
 #include "regexpr.h"
 
 /*
@@ -198,7 +198,7 @@ regexpr *reg_compile(char *exp)
 	register char *longest;
 	register int len;
 	int flags;
-	extern char *malloc();
+	/*	extern char *malloc(); */ 
 
 	if (exp == NULL)
 		FAIL("NULL argument");

@@ -13,7 +13,7 @@
  * DESCRIPTION:	Implementation of internal text file viewer.sity logo and my
  *
  */
-
+#include <stdlib.h> 
 #include <Xm/Xm.h>
 #include <Xm/Form.h>
 #include <Xm/Label.h>

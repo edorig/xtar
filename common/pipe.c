@@ -20,6 +20,9 @@
 #include <errno.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
 #include "magic.h"
 #include "str.h"
@@ -54,6 +57,9 @@ int pipe_open(char *filename)
     } else if(is_bzipped(filename)) {
         strcpy(name, "bzip2");
         strcpy(args, "-dc");
+    } else if(is_xzipped(filename)) {
+	strcpy(name, "xz");
+	strcpy(args, "-dc"); 
     } else if(filename == NULL) {
         return(0);
     } else {

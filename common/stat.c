@@ -25,7 +25,7 @@ int stat_size(char *);		/* File size in bytes     */
 time_t stat_atime(char *);	/* Last access time       */
 time_t stat_mtime(char *);	/* Last modification time */
 time_t stat_ctime(char *);	/* Last status change     */
-ushort stat_mode(char *);	/* Mode of file           */
+unsigned short stat_mode(char *);	/* Mode of file           */
 uid_t stat_uid(char *);		/* UID of owner           */
 gid_t stat_gid(char *);		/* GID of owner           */
 int stat_isdir(char *);         /* Is this a directory    */
@@ -91,14 +91,14 @@ int stat_size(char *filename)
 /* stat_mode: Mode of file - chmod thingies.                        */
 /* stat_mode:********************************************************/
 
-ushort stat_mode(char *filename)
+unsigned short stat_mode(char *filename)
 {
     struct stat statbuf;
 
     if(stat(filename, &statbuf) < 0)
         return(0);
     else
-        return(statbuf.st_mode);
+      return((unsigned short)statbuf.st_mode);
 }
 
 /* stat_uid:*********************************************************/

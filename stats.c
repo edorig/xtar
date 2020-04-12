@@ -175,7 +175,10 @@ static char *stats_text(XTAR_STATS *stats)
                 break; 
             case _COMPRESSED_BZ:
                 n += sprintf(&buffer[n],"\nCompression: BZIP2\n");
-                break; 
+                break;
+	    case _COMPRESSED_XZ:
+	      n+=sprintf(&buffer[n],"\nCompression: LZMA/7Z\n");
+	      break; 
         }
     } else {
         strcpy(buffer,"ERROR: No file loaded!\n");

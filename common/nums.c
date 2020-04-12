@@ -17,7 +17,8 @@
  */
 
 #include <sys/time.h>
-
+#include <ctype.h>
+#include <stdlib.h>
 int num_random();
 long num_decimal(char *, int);
 
